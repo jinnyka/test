@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <style>
+        * {font-size: 1.0em; font-weight: bold; text-align: center;
+        margin:0; padding:0;
+    scroll-behavior: smooth;}
+
+
+    * {cursor: url('i.cur'), auto;}
+
+body {background-color:#F4E05F;}
+#wrap   {width:1400px; height:850px; margin:auto;}
+
+#frame  {width:1000px;height:700px; margin:auto;   overflow:hidden; }
+#longslide  {width:5000px; height:700px; box-sizing:border-box; transition-duration:0.5s; }
+
+#a:checked ~ #frame #longslide {margin-left:0px;}
+#b:checked ~ #frame #longslide {margin-left:-1000px;}
+#c:checked ~ #frame #longslide {margin-left:-2000px;}
+#d:checked ~ #frame #longslide {margin-left:-3000px;}
+
+
+.sub {margin: 5px 0 0 20px; display:block; font-size:1.5em; font-weight:bold;}
+.cont {margin-left: 20px; margin-top: -10px; display:block; font-weight:bold;}
+
+#label  {width:800px; height:100px; margin:100px auto 0 auto; padding:20px 0;}    
+.img    {margin:20px 2px ; width:190px;}  
+.img img    {width:190px;}  
+.slide  {width:1000px; height:700px; float:left;  position:relative;}
+.video  {width:1000px;}
+
+
+#header {width: 1920px; 
+    height: 1000px; 
+    border: 1px solid white; 
+    margin: auto;}
+#sec1 {width: 1920px; line-height: 100px;
+    height: 1000px; 
+    border: 1px solid white; 
+     margin: auto;
+    background-image: url('PORTFOLIO.jpg');
+    background-size: 1920px;
+    background-repeat: no-repeat;}
+#sec2 {width: 1920px; line-height: 100px;
+    height: 1000px; 
+    border: 1px solid white; 
+    margin: auto;
+    }
+#sec3 {width: 1920px; line-height: 100px;
+    height: 1000px; 
+    border: 1px solid white; 
+    margin: auto;}
+#footer {width: 1920px; line-height: 100px;
+    height: 1000px; 
+    border: 1px solid white; 
+    background-color: white;
+    margin: auto;}
+#float {width: 100px; height: 365px; border: 7px solid white;
+position: fixed;
+top: 200px;
+right: 100px;
+background-color: #F4E05F;
+font-size: 0.8em;
+font-family: Broadway;
+line-height: 70px;}
+
+div:nth-child(1) {border-radius:40px 40px 40px 40px;}
+
+input {display: none;}
+
+
+
+#a:checked ~ .sa {height:550px;}
+#b:checked ~ .sb {height:550px;}
+#c:checked ~ .sc {height:550px;}
+#d:checked ~ .sd {height:550px;}
+
+#a:checked ~ .close {display:block;}
+#b:checked ~ .close {display:block;}
+#c:checked ~ .close {display:block;}
+#d:checked ~ .close {display:block;}
+
+    </style>
+</head>
+<body>
+
+
+        
+
+    <div id="float">
+        <a href="#header">HOME</a><br>
+        <a href="#sec1">PORTFOLIO</a><br>
+        <a href="#sec2">SKILLS</a><br>
+        <a href="#sec3">ABOUT ME</a><br>
+        <a href="#footer">CONTACT</a>
+    </div>
+    
+
+<div id="header"><img src="home.jpg" height="1000px"></div>
+
+<div id="sec1">
+<input id="a" type="radio" name="select" onchange="pause()"  checked  >
+<input id="b" type="radio" name="select" onchange="pause()" >
+<input id="c" type="radio" name="select" onchange="pause()" >
+<input id="d" type="radio" name="select" onchange="pause()" >
+
+<div id="label">
+    <label for="a" class="img"><img src="썸네일.jpg" ></label>
+    <label for="b" class="img"><img src="썸네일2.JPG" ></label>
+    <label for="c" class="img"><img src="썸네일3.JPG" ></label>
+    <label for="d" class="img"><img src="썸네일4.JPG"></label>
+    </div>
+
+
+    <div id="frame">
+        <div id="longslide">
+            <div class="slide">
+                <video class="video" poster="썸네일.jpg" src="1.mp4" controls></video>
+          
+            </div>
+
+            <div class="slide">
+                <video class="video" poster="썸네일2.JPG" src="2.mp4" controls></video>
+            </div>
+
+            <div class="slide">
+                <video class="video" poster="썸네일3.JPG" src="3.mp4" controls></video> 
+            </div>
+
+            <div class="slide">
+                <video class="video" poster="썸네일4.JPG" src="4.mp4" controls></video> 
+            </div>
+
+        </div>
+     </div>
+    </div>
+ 
+
+<div id="sec2"><img src="SKILLS.jpg" height="1000px"></div>
+<div id="sec3"><img src="ABOUT.jpg" height="1000px"></div>
+<div id="footer"><img src="CONTACT.jpg" height="1000px"></div>
+
+<script>
+        function pause() {
+        const videos = document.querySelectorAll('.video');
+        videos.forEach(video => video.pause());
+        }
+    </script>
+
+</body>
+</html>
